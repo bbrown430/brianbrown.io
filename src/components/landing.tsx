@@ -27,37 +27,132 @@ export function Landing() {
   return (
     <div className="flex flex-col items-start gap-2">
       <div className="flex gap-2">
-        <HoverIconButton Icon={FaPython} color="yellow" tooltip="Python" />
+        <HoverIconButton
+          Icon={FaPython}
+          color="yellow"
+          tooltip="Python"
+          stars={9}
+        />
       </div>
+
       <div className="flex gap-2">
-        <HoverIconButton Icon={FaReact} color="cyan" />
-        <HoverIconButton Icon={SiTypescript} color="blue" />
+        <HoverIconButton
+          Icon={FaReact}
+          color="cyan"
+          tooltip="React"
+          stars={8}
+        />
+        <HoverIconButton
+          Icon={SiTypescript}
+          color="blue"
+          tooltip="TypeScript"
+          stars={9}
+        />
       </div>
+
       <div className="flex gap-2">
-        <HoverIconButton Icon={FaJava} color="orange" />
-        <HoverIconButton Icon={TbBrandCSharp} color="purple" />
-        <HoverIconButton Icon={TbBrandCpp} color="green" />
+        <HoverIconButton
+          Icon={FaJava}
+          color="orange"
+          tooltip="Java"
+          stars={7}
+        />
+        <HoverIconButton
+          Icon={TbBrandCSharp}
+          color="purple"
+          tooltip="C#"
+          stars={6}
+        />
+        <HoverIconButton
+          Icon={TbBrandCpp}
+          color="green"
+          tooltip="C++"
+          stars={7}
+        />
       </div>
+
       <div className="flex gap-2">
-        <HoverIconButton Icon={FaAws} color="orange" />
-        <HoverIconButton Icon={TbSql} color="blue" />
-        <HoverIconButton Icon={SiFastapi} color="cyan" />
-        <HoverIconButton Icon={FaNodeJs} color="green" />
+        <HoverIconButton Icon={FaAws} color="orange" tooltip="AWS" stars={8} />
+        <HoverIconButton Icon={TbSql} color="blue" tooltip="SQL" stars={9} />
+        <HoverIconButton
+          Icon={SiFastapi}
+          color="cyan"
+          tooltip="FastAPI"
+          stars={7}
+        />
+        <HoverIconButton
+          Icon={FaNodeJs}
+          color="green"
+          tooltip="Node.js"
+          stars={8}
+        />
       </div>
+
       <div className="flex gap-2">
-        <HoverIconButton Icon={FiFigma} color="cyan" />
-        <HoverIconButton Icon={SiTailwindcss} color="blue" />
-        <HoverIconButton Icon={SiAdobeaftereffects} color="purple" />
-        <HoverIconButton Icon={SiAdobephotoshop} color="blue" />
-        <HoverIconButton Icon={SiAdobeillustrator} color="orange" />
+        <HoverIconButton
+          Icon={FiFigma}
+          color="cyan"
+          tooltip="Figma"
+          stars={8}
+        />
+        <HoverIconButton
+          Icon={SiTailwindcss}
+          color="blue"
+          tooltip="Tailwind CSS"
+          stars={9}
+        />
+        <HoverIconButton
+          Icon={SiAdobeaftereffects}
+          color="purple"
+          tooltip="After Effects"
+          stars={6}
+        />
+        <HoverIconButton
+          Icon={SiAdobephotoshop}
+          color="blue"
+          tooltip="Photoshop"
+          stars={7}
+        />
+        <HoverIconButton
+          Icon={SiAdobeillustrator}
+          color="orange"
+          tooltip="Illustrator"
+          stars={6}
+        />
       </div>
+
       <div className="flex gap-2">
-        <HoverIconButton Icon={FaGitAlt} color="red" />
-        <HoverIconButton Icon={SiMongodb} color="green" />
-        <HoverIconButton Icon={SiArduino} color="cyan" />
-        <HoverIconButton Icon={SiKicad} color="blue" />
-        <HoverIconButton Icon={SiNotion} color="base" />
-        <HoverIconButton svgSrc="/logos/solidworks.svg" color="red" />
+        <HoverIconButton Icon={FaGitAlt} color="red" tooltip="Git" stars={9} />
+        <HoverIconButton
+          Icon={SiMongodb}
+          color="green"
+          tooltip="MongoDB"
+          stars={7}
+        />
+        <HoverIconButton
+          Icon={SiArduino}
+          color="cyan"
+          tooltip="Arduino"
+          stars={8}
+        />
+        <HoverIconButton
+          Icon={SiKicad}
+          color="blue"
+          tooltip="KiCad"
+          stars={6}
+        />
+        <HoverIconButton
+          Icon={SiNotion}
+          color="base"
+          tooltip="Notion"
+          stars={7}
+        />
+        <HoverIconButton
+          svgSrc="/logos/solidworks.svg"
+          color="red"
+          tooltip="SolidWorks"
+          stars={5}
+        />
       </div>
     </div>
   );
