@@ -1,26 +1,64 @@
-// src/components/landing.tsx
-import { FaBeer } from "react-icons/fa";
+import {
+  FaPython,
+  FaReact,
+  FaJava,
+  FaGitAlt,
+  FaNodeJs,
+  FaAws,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiAdobeaftereffects,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiTailwindcss,
+  SiNotion,
+  SiMongodb,
+  SiArduino,
+  SiKicad,
+  SiFastapi,
+} from "react-icons/si";
+import { TbBrandCSharp, TbBrandCpp, TbSql } from "react-icons/tb";
+import { FiFigma } from "react-icons/fi";
 
-const HoverIconButton = ({ iconColorClass = "text-flexoki-red-400" }) => {
-  return (
-    <div className={`
-      flex items-center justify-center w-20 h-20 rounded-xl
-      bg-flexoki-dark-tx hover:bg-flexoki-red-400
-      transition-colors duration-300 ease-in-out
-      group cursor-pointer
-    `}>
-      <FaBeer className={`
-        w-12 h-12 transition-colors duration-300 ease-in-out
-        ${iconColorClass} group-hover:text-flexoki-dark-tx
-      `} />
-    </div>
-  );
-};
+import HoverIconButton from "./ui/hover-icon-button";
 
 export function Landing() {
   return (
-    <div className="flex flex-col items-center justify-center text-center">
-      <HoverIconButton />
+    <div className="flex flex-col items-start gap-2">
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FaPython} color="yellow" tooltip="Python" />
+      </div>
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FaReact} color="cyan" />
+        <HoverIconButton Icon={SiTypescript} color="blue" />
+      </div>
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FaJava} color="orange" />
+        <HoverIconButton Icon={TbBrandCSharp} color="purple" />
+        <HoverIconButton Icon={TbBrandCpp} color="green" />
+      </div>
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FaAws} color="orange" />
+        <HoverIconButton Icon={TbSql} color="blue" />
+        <HoverIconButton Icon={SiFastapi} color="cyan" />
+        <HoverIconButton Icon={FaNodeJs} color="green" />
+      </div>
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FiFigma} color="cyan" />
+        <HoverIconButton Icon={SiTailwindcss} color="blue" />
+        <HoverIconButton Icon={SiAdobeaftereffects} color="purple" />
+        <HoverIconButton Icon={SiAdobephotoshop} color="blue" />
+        <HoverIconButton Icon={SiAdobeillustrator} color="orange" />
+      </div>
+      <div className="flex gap-2">
+        <HoverIconButton Icon={FaGitAlt} color="red" />
+        <HoverIconButton Icon={SiMongodb} color="green" />
+        <HoverIconButton Icon={SiArduino} color="cyan" />
+        <HoverIconButton Icon={SiKicad} color="blue" />
+        <HoverIconButton Icon={SiNotion} color="base" />
+        <HoverIconButton svgSrc="/logos/solidworks.svg" color="red" />
+      </div>
     </div>
   );
 }
