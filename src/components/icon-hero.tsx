@@ -23,7 +23,7 @@ import { FiFigma } from "react-icons/fi";
 
 import HoverIconButton from "./ui/hover-icon-button";
 
-export function Landing() {
+export function IconHero() {
   return (
     <div className="flex flex-col items-start gap-2">
       <div className="flex gap-2">
@@ -31,7 +31,7 @@ export function Landing() {
           Icon={FaPython}
           color="yellow"
           tooltip="Python"
-          stars={9}
+          stars={8}
         />
       </div>
 
@@ -40,13 +40,13 @@ export function Landing() {
           Icon={FaReact}
           color="cyan"
           tooltip="React"
-          stars={8}
+          stars={7}
         />
         <HoverIconButton
           Icon={SiTypescript}
           color="blue"
           tooltip="TypeScript"
-          stars={9}
+          stars={7}
         />
       </div>
 
@@ -61,13 +61,13 @@ export function Landing() {
           Icon={TbBrandCSharp}
           color="purple"
           tooltip="C#"
-          stars={6}
+          stars={7}
         />
         <HoverIconButton
           Icon={TbBrandCpp}
           color="green"
           tooltip="C++"
-          stars={7}
+          stars={6}
         />
       </div>
 
@@ -84,7 +84,7 @@ export function Landing() {
           Icon={FaNodeJs}
           color="green"
           tooltip="Node.js"
-          stars={8}
+          stars={6}
         />
       </div>
 
@@ -93,7 +93,7 @@ export function Landing() {
           Icon={FiFigma}
           color="cyan"
           tooltip="Figma"
-          stars={8}
+          stars={9}
         />
         <HoverIconButton
           Icon={SiTailwindcss}
@@ -105,19 +105,19 @@ export function Landing() {
           Icon={SiAdobeaftereffects}
           color="purple"
           tooltip="After Effects"
-          stars={6}
+          stars={9}
         />
         <HoverIconButton
           Icon={SiAdobephotoshop}
           color="blue"
           tooltip="Photoshop"
-          stars={7}
+          stars={8}
         />
         <HoverIconButton
           Icon={SiAdobeillustrator}
           color="orange"
           tooltip="Illustrator"
-          stars={6}
+          stars={8}
         />
       </div>
 
@@ -133,7 +133,7 @@ export function Landing() {
           Icon={SiArduino}
           color="cyan"
           tooltip="Arduino"
-          stars={8}
+          stars={7}
         />
         <HoverIconButton
           Icon={SiKicad}
@@ -145,13 +145,13 @@ export function Landing() {
           Icon={SiNotion}
           color="base"
           tooltip="Notion"
-          stars={7}
+          stars={9}
         />
         <HoverIconButton
           svgSrc="/logos/solidworks.svg"
           color="red"
-          tooltip="SolidWorks"
-          stars={5}
+          tooltip="SOLIDWORKS"
+          stars={8}
         />
       </div>
     </div>

@@ -2,7 +2,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { PosterCard } from "./components/poster-card";
 import { KindleCard } from "./components/kindle-card";
 import { Toaster } from "@/components/ui/sonner";
-import { Landing } from "./components/landing";
 
 import {
   BrowserRouter as Router,
@@ -13,6 +12,7 @@ import {
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
+import LandingTitle from "./components/landing-title";
 
 // Component to wrap animated routes
 function AnimatedRoutes() {
@@ -34,7 +34,7 @@ function AnimatedRoutes() {
               exit={{ opacity: 0, y: -20, scale: 1.5 }}
               transition={{ duration: 0.4 }}
             >
-              <Landing />
+              <LandingTitle />
             </motion.div>
           }
         />

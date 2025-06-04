@@ -65,7 +65,7 @@ const renderStars = (score: number) => {
   const full = Math.floor(clamped / 2);
   const half = clamped % 2 === 1 ? 1 : 0;
   return (
-    <div className="-mt-1">
+    <div>
       {"★".repeat(full)}
       {half ? "½" : ""}
     </div>
@@ -100,14 +100,14 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
       {tooltip && (
         <div
           className={`
-      absolute -top-14 -right-20
+      absolute translate-x-15 -translate-y-14
       opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100
       transition-all duration-400 ease-out
       origin-bottom-left
       pointer-events-none z-[500]
     `}
         >
-          <div className="px-3 py-3 rounded-xl bg-flexoki-black border-primary border-2 text-primary text-start">
+          <div className="px-3 py-3 rounded-xl leading-snug bg-flexoki-black border-primary border-2 text-primary text-start">
             {tooltip}
             {stars !== undefined && renderStars(stars)}
           </div>
@@ -125,7 +125,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
         {svgSrc && svgContent ? (
           <div
             className={`
-              w-12 h-12 transition-colors duration-100 ease-in-out
+              w-12 h-12 transition-colors duration-150 ease-in-out
               ${colorClasses.text} group-hover:text-flexoki-dark-tx
               [&>svg]:w-full [&>svg]:h-full [&>svg]:fill-current
             `}
@@ -134,7 +134,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
         ) : (
           <IconComponent
             className={`
-              w-12 h-12 transition-colors duration-100 ease-in-out
+              w-12 h-12 transition-colors duration-150 ease-in-out
               ${colorClasses.text} group-hover:text-flexoki-dark-tx
             `}
           />
