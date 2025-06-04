@@ -2,6 +2,7 @@ import React from "react";
 import { IconHero } from "./icon-hero";
 import LogoButton from "./ui/logo-button";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import ProjectBrief from "./ui/project-brief";
 
 const LandingTitle: React.FC = () => {
   return (
@@ -17,13 +18,22 @@ const LandingTitle: React.FC = () => {
             icon={FaLinkedin}
             link="https://www.linkedin.com/in/brian-brown-neu/"
           />
-          <LogoButton
-            icon={FaGithub}
-            link="https://github.com/bbrown430"
-          />
+          <LogoButton icon={FaGithub} link="https://github.com/bbrown430" />
         </div>
       </div>
       <IconHero />
+      <div className="my-8">
+      <ProjectBrief
+        title="P.L.A.Y Piano"
+        skills={["SOLIDWORKS", "React", "Figma", "Python", "Flask", "Node.js"]}
+        description="An all-in-one piano learning solution, bringing an illuminated Guitar Hero experience to the piano. The 1st place winning Northeastern Spring 2024 ECE Capstone Design Project."
+        color="blue"
+        alignment="left"
+        navigate="/playpiano"
+        lottiePath="/lotties/playpiano.json"
+      />
+      </div>
+      
     </div>
   );
 };

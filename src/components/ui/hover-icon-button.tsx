@@ -1,56 +1,8 @@
+// Updated HoverIconButton.tsx
 import React, { useState, useEffect } from "react";
 import { FaCog } from "react-icons/fa";
 import { IconType } from "react-icons";
-
-type ColorVariant =
-  | "red"
-  | "orange"
-  | "yellow"
-  | "green"
-  | "cyan"
-  | "blue"
-  | "purple"
-  | "magenta"
-  | "base";
-
-const colorMap: Record<ColorVariant, { text: string; hover: string }> = {
-  red: {
-    text: "text-flexoki-red-400",
-    hover: "hover:bg-flexoki-red-400",
-  },
-  orange: {
-    text: "text-flexoki-orange-400",
-    hover: "hover:bg-flexoki-orange-400",
-  },
-  yellow: {
-    text: "text-flexoki-yellow-400",
-    hover: "hover:bg-flexoki-yellow-400",
-  },
-  green: {
-    text: "text-flexoki-green-400",
-    hover: "hover:bg-flexoki-green-400",
-  },
-  cyan: {
-    text: "text-flexoki-cyan-400",
-    hover: "hover:bg-flexoki-cyan-400",
-  },
-  blue: {
-    text: "text-flexoki-blue-400",
-    hover: "hover:bg-flexoki-blue-400",
-  },
-  purple: {
-    text: "text-flexoki-purple-400",
-    hover: "hover:bg-flexoki-purple-400",
-  },
-  magenta: {
-    text: "text-flexoki-magenta-400",
-    hover: "hover:bg-flexoki-magenta-400",
-  },
-  base: {
-    text: "text-flexoki-base-950",
-    hover: "hover:bg-flexoki-base-950",
-  },
-};
+import { ColorVariant, getColorClasses } from "@/utils/colors";
 
 interface HoverIconButtonProps {
   Icon?: IconType;
@@ -80,7 +32,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
   stars,
 }) => {
   const [svgContent, setSvgContent] = useState<string>("");
-  const colorClasses = colorMap[color];
+  const colorClasses = getColorClasses(color);
   const IconComponent = Icon || FaCog;
 
   useEffect(() => {
@@ -100,12 +52,12 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
       {tooltip && (
         <div
           className={`
-      absolute translate-x-15 -translate-y-14
-      opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100
-      transition-all duration-400 ease-out
-      origin-bottom-left
-      pointer-events-none z-[500]
-    `}
+            absolute translate-x-15 -translate-y-14
+            opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100
+            transition-all duration-400 ease-out
+            origin-bottom-left
+            pointer-events-none z-[500]
+          `}
         >
           <div className="px-3 py-3 rounded-xl leading-snug bg-flexoki-black border-primary border-2 text-primary text-start">
             {tooltip}
