@@ -91,8 +91,8 @@ const Timeline: React.FC = () => {
           title="This Website"
           skills={["React", "Typescript", "Figma", "Tailwind CSS"]}
           description="This very website was designed and built by me, to uniquely show off my projects and skills."
-          navigate="/repeat-receipts"
-          lottiePath="/lotties/repeatreceipts.json"
+          navigate="https://github.com/bbrown430/brianbrown.io"
+          lottiePath="/lotties/thiswebsite.json"
           date={"Since '23"}
         />
       </div>
