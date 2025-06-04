@@ -21,6 +21,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import ThreeDDesign from "./pages/projects/3d-design";
 import NotFound from "./pages/not-found";
+import ContactMe from "./pages/contact-me";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -40,9 +41,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <LandingTitle />
@@ -54,9 +55,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <PlayPiano />
@@ -68,9 +69,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <SmartBlinds />
@@ -82,9 +83,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <RoboticBallCollector />
@@ -96,9 +97,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <EndlessLibrary />
@@ -110,9 +111,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <RepeatReceipts />
@@ -124,9 +125,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <KindleCard />
@@ -138,9 +139,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <ThreeDDesign />
@@ -152,12 +153,26 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0, x: "100vw" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "-100vw" }}
+                  initial={{ opacity: 0,}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0}}
                   transition={{ duration: 0.4 }}
                 >
                   <NotFound />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/contact-me"
+              element={
+                <motion.div
+                  className="max-w-7xl mx-12"
+                  initial={{ opacity: 0}}
+                  animate={{ opacity: 1}}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <ContactMe />
                 </motion.div>
               }
             />

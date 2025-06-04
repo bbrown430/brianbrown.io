@@ -1,9 +1,12 @@
 import ProjectHeader from "@/components/project-page/project-header";
+import PageSubtitle from "@/components/typography/page-subtitle";
+import PageTitle from "@/components/typography/page-title";
 
 const NotFound: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-12">
-      <ProjectHeader title="404" subtitle="Not found!" />
+    <div className="flex flex-col items-center justify-center">
+      <PageTitle title="404" />
+      <PageSubtitle title="Page not found!" />
     </div>
   );
 };
