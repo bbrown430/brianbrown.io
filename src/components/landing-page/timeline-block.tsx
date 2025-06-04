@@ -11,6 +11,7 @@ interface TimelineBlockProps {
     lottiePath?: string;
     className?: string;
     date: string
+    lottieWidth?: string;
   }
   
   const TimelineBlock: React.FC<TimelineBlockProps> = ({
@@ -22,7 +23,8 @@ interface TimelineBlockProps {
     navigate = "",
     lottiePath = "",
     className = "",
-    date
+    date,
+    lottieWidth
   }) => {
     const colorClasses = getColorClasses(color);
     const alignment = side === "left" ? "right" : "left";
@@ -37,6 +39,7 @@ interface TimelineBlockProps {
         navigate={navigate}
         lottiePath={lottiePath}
         date={date}
+        lottieWidth={lottieWidth}
       />
     );
   

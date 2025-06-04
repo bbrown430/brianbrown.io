@@ -32,7 +32,7 @@ const Timeline: React.FC = () => {
           skills={["React", "OpenAI Whisper", "TypeScript", "Tailwind CSS", "Python"]}
           description="Search through 450+ hours of the greatest internet radio show, Time Crisis with Ezra Koenig. Tweeted about by the show themselves!"
           navigate="https://www.searchtimecrisis.com/"
-          lottiePath="/lotties/smartblinds.json"
+          lottiePath="/lotties/searchtimecrisis.json"
           date={"Oct '24"}
         />
         <TimelineBlock
@@ -64,6 +64,7 @@ const Timeline: React.FC = () => {
           navigate="https://bsquareddesigns.webflow.io/"
           lottiePath="/lotties/bsquared.json"
           date={"Since '15"}
+          lottieWidth="w-30"
         />
         <TimelineBlock
           side="right"

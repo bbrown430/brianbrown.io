@@ -15,11 +15,12 @@ interface ProjectBriefProps {
   title: string;
   skills: string[];
   description: string;
-  color: ColorVariant | string; // Now supports both ColorVariant and custom strings
+  color: ColorVariant | string;
   alignment: Alignment;
   navigate: string;
   lottiePath: string;
   date: string;
+  lottieWidth?: string;
 }
 
 const ProjectBrief: React.FC<ProjectBriefProps> = ({
@@ -30,12 +31,12 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
   alignment,
   navigate,
   lottiePath,
-  date
+  date,
+  lottieWidth = "w-48"
 }) => {
   const navigateTo = useNavigate();
   const [animationData, setAnimationData] = useState(null);
 
-  // Get color classes based on whether it's a ColorVariant or custom string
   const colorClasses = isColorVariant(color)
     ? getColorClasses(color)
     : getColorClassesByString(color);
@@ -105,7 +106,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
       </div>
 
       {/* Lottie Animation Section */}
-      <div className={`w-48 ${isLeftAlignment ? "order-2" : "order-1"}`}>
+      <div className={`${lottieWidth} ${isLeftAlignment ? "order-2" : "order-1"}`}>
         <Lottie animationData={animationData} loop={true} autoplay={true} />
       </div>
     </div>
