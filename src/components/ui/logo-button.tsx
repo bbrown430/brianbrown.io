@@ -12,7 +12,7 @@ const LogoButton: React.FC<LogoButtonProps> = ({ icon: Icon, link }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-8 h-8 text-muted-foreground transition-colors ease-in-out duration-150 hover:text-flexoki-green-500"
+            className="flex items-center justify-center w-8 h-8 text-muted-foreground transition-colors ease-in-out duration-150 hover:text-flexoki-green-400"
         >
             <Icon className="w-12 h-12" />
         </a>

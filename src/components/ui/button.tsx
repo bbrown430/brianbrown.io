@@ -38,23 +38,6 @@ const buttonVariants = cva(
   }
 )
 
-// Helper function to generate color-outline classes
-const getColorOutlineClasses = (color: ColorVariant | string) => {
-  const colorClasses = isColorVariant(color) 
-    ? getColorClasses(color) 
-    : getColorClassesByString(color);
-
-  // Extract the actual color value from the class string
-  // e.g., "border-flexoki-blue-400" -> "flexoki-blue-400"
-  const colorValue = colorClasses.border.replace('border-', '');
-  
-  return {
-    border: colorClasses.border,
-    text: colorClasses.text,
-    hoverBg: `hover:bg-${colorValue}`,
-    hoverText: "hover:text-white",
-  };
-};
 
 interface ButtonProps extends 
   React.ComponentProps<"button">,
@@ -90,7 +73,7 @@ function Button({
       "border-2 shadow-xs bg-transparent",
       colorClasses.border,
       colorClasses.muted,
-      colorClasses.hover,
+      colorClasses.hoverMuted,
       "hover:text-black",
       className
     );
