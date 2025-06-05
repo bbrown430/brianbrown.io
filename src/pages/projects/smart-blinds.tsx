@@ -33,12 +33,14 @@ const SmartBlinds: React.FC = () => {
           paragraphText="I first had to understand how my blinds worked. They were controlled by the rotation of a wand, which was connected to a tilt mechanism, which was connected to the axle. This axle would then rotate the drum and cradle, which adjusts the openness of the blinds. Rotating this axle was what really mattered, as that rotation would in turn adjust the openness of the blinds as a whole."
           imageLink="images\smart-blinds\internal-research.png"
           altText="labeled diagram of blinds mechanism"
+          mediaWidth="2/3"
         />
         <ProjectBlock
           title="Retrofitting"
           paragraphText="To electronically control these blinds, I would need to replace the wand and gearbox with a motor. I began by taking measurements of the existing gearbox to recreate it in SolidWorks. With the outer geometry kept identical, I could then subtract out the center of it to account for the motor. This would allow me to friction fit the motor enclosure into the existing blinds rail. To connect the stepper motor shaft to the blind axle, I designed an adaptor to connect the two."
           imageLink="images\smart-blinds\retrofitting.png"
           altText="stepper motor with shaft adapter"
+          mediaWidth="4/5"
         />
         <ProjectBlock
           title="Prototyping"
@@ -61,6 +63,7 @@ const SmartBlinds: React.FC = () => {
           paragraphText="To house all the PCB, I designed as small of a case as possible, while still being functional and aesthetically pleasing. The case has 2 standoffs to secure the PCB, and ports for the barrel jack, USB port, and motors. The lid and base have ventilation on the top and bottom, and secure together using M3 hardware."
           imageLink="images\smart-blinds\housing.png"
           altText="3d render of case for pcb and components"
+          mediaWidth="2/3"
         />
         <ProjectBlock
           title="Installation"

@@ -14,6 +14,7 @@ interface ProjectBlockProps {
   videoHeight?: string;
   subheading?: boolean;
   timelineImage?: string;
+  mediaWidth?: string;
 }
 
 const ProjectBlock: React.FC<ProjectBlockProps> = ({
@@ -26,23 +27,38 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
   videoHeight,
   subheading = false,
   timelineImage,
+  mediaWidth = "3/5"
 }) => {
+  // Map width values to actual Tailwind classes
+  const getWidthClasses = (width: string) => {
+    const widthMap = {
+      "1/5": { text: "md:w-1/5", media: "md:w-4/5" },
+      "2/5": { text: "md:w-2/5", media: "md:w-3/5" },
+      "3/5": { text: "md:w-3/5", media: "md:w-2/5" },
+      "4/5": { text: "md:w-4/5", media: "md:w-1/5" },
+      "1/2": { text: "md:w-1/2", media: "md:w-1/2" },
+      "1/3": { text: "md:w-1/3", media: "md:w-2/3" },
+      "2/3": { text: "md:w-2/3", media: "md:w-1/3" },
+      "1/4": { text: "md:w-1/4", media: "md:w-3/4" },
+      "3/4": { text: "md:w-3/4", media: "md:w-1/4" },
+    };
+    
+    return widthMap[width as keyof typeof widthMap] || widthMap["3/5"];
+  };
+
+  const widthClasses = getWidthClasses(mediaWidth);
+  const textWidth = imageLink || videoUrl ? widthClasses.text : "w-full";
+  const mediaWidthClass = widthClasses.media;
 
   return (
     <div
       className={`flex flex-col ${
         paragraphText ? "md:flex-row" : "md:flex-col"
-      }
-      ${
+      } ${
         paragraphText ? "gap-8" : "gap-2"
-      }
-      px-4`}
+      } px-4`}
     >
-      <div
-        className={`${
-          imageLink || videoUrl ? "md:w-3/5" : "w-full"
-        } flex flex-col gap-2 justify-center`}
-      >
+      <div className={`${textWidth} flex flex-col gap-2 justify-center`}>
         <div className="flex flex-col gap-2 items-start">
           {subheading ? (
             <SectionSubheader title={title} />
@@ -58,7 +74,7 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
                 <div className="w-full mt-4">
                   <img
                     src={timelineImage}
-                    alt={altText || `${title} timeline` || "Timeline image"}
+                    alt={altText || `${title} timeline`}
                     className="w-full h-auto rounded-lg object-cover"
                   />
                 </div>
@@ -67,8 +83,9 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
           )}
         </div>
       </div>
+      
       {(imageLink || videoUrl) && (
-        <div className="md:w-2/5 flex justify-center items-center p-2">
+        <div className={`${mediaWidthClass} flex justify-center items-center p-2`}>
           {videoUrl ? (
             <VideoPlayer
               url={videoUrl}
@@ -78,7 +95,7 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
           ) : (
             <img
               src={imageLink}
-              alt={altText || title || "Project image"}
+              alt={altText || title}
               className="max-w-full h-auto rounded-lg object-cover"
             />
           )}

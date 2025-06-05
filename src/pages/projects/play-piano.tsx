@@ -57,19 +57,19 @@ const PlayPiano: React.FC = () => {
           title="Additional Parts"
           paragraphText={`In addition to the keys and housing, I designed a control panel to re-use the keyboards' original function buttons, and control knobs. These would be essential for controlling volume, pausing, and pitch shifting. This panel attached to the external housing with M3 hardware. Additionally, I designed a 3D logo for the right side of the external housing, which would illuminate red, yellow, or green, to give feedback, similar to the "Rock" meter in **Guitar Hero**.`}
           imageLink="images\play-piano\additional-parts.png"
-          altText="isometric view of led channels"
+          altText="isometric view of miscelaneous parts"
         />
         <ProjectBlock
           title="User Experience"
           paragraphText="One non-negotiable for this project was that the end user would never have to interact with a mouse, keyboard, touch screen, etc. All of the interaction would happen through the keyboard itself, in order to truly provide an all-in-one experience. To achieve this, we associated colored UI elements with colored physical piano keys. For the user to select an on-screen element, they would simply select the key that is the same color as the on-screen element. This proved very intuitive in user testing and allowed for a seamless user experience."
           imageLink="images\play-piano\user-experience.png"
-          altText="isometric view of led channels"
+          altText="photograph of UI on piano screen"
         />
         <ProjectBlock
           title="User Interface"
           paragraphText="When designing the user interface, I prioritized bold, simple, playful elements. As the user would be interacting with the UI solely through the piano keys, an overcomplicated UI would break the user experience. I began by designing everything in Figma, and once I was satisfied, I recreated everything in React, stylizing with Tailwind CSS. The main screens of the UI consisted of the splash screen, mode select, song select, the in-song screen, and the pause menu."
           imageLink="images\play-piano\user-interface.png"
-          altText="isometric view of led channels"
+          altText="screenshots of user interface"
         />
         <ProjectBlock
           title="Modes"
@@ -82,7 +82,8 @@ const PlayPiano: React.FC = () => {
           title="Reflection"
           paragraphText="It was very rewarding to win 1st place out of 18 teams, and it truly felt like all of our hard work had paid off. I am incredibly proud of how this project turned out, and my team. I only discussed the parts I worked on in this writeup, but it was a massive collaborative effort. The most rewarding part of this whole project was watching everybody interact with our product. While my group members and I thought we had made something exceptionally cool, it's a different feeling altogether when other people express to you how cool it truly is. Everybody wanted a turn, and their reactions as they played are my fondest memories from this project. The judges made note of how polished every aspect of our product was and asked if we had intentions of patenting our work. It was really a labor of love, and it was awesome when other people loved it as much as we did."
           imageLink="images\play-piano\reflection.jpg"
-          altText="isometric view of led channels"
+          altText="group picture"
+          mediaWidth="2/3"
         />
       </div>
     </div>

@@ -9,8 +9,16 @@ const RepeatReceipts: React.FC = () => {
         subtitle="Ever wonder what songs you keep coming back to year after year? With Repeat Receipts, wonder no more."
         imgUrl="images/repeat-receipts/hero.png"
         buttons={[
-          { text: "Try it Out! (loads very slow)", link: "https://repeatreceipts.onrender.com/", color: "purple" },
-          { text: "GitHub Repo", link: "https://github.com/bbrown430/repeatreceipts", color: "purple" },
+          {
+            text: "Try it Out! (loads very slow)",
+            link: "https://repeatreceipts.onrender.com/",
+            color: "purple",
+          },
+          {
+            text: "GitHub Repo",
+            link: "https://github.com/bbrown430/repeatreceipts",
+            color: "purple",
+          },
         ]}
       />
       <div className="flex flex-col gap-4">
@@ -56,6 +64,7 @@ const RepeatReceipts: React.FC = () => {
           paragraphText="One of the main draws of Spotify Wrapped, or really any Spotify API project is the shareability of it, specifically your top 5 songs and artists of the year. While I didn’t develop this with virality in mind, I wanted something to share that was prettier than a screenshot of the webpage. I drafted a design up in Figma, and once I was satisfied with it, I used the Pillow library to render the image based on the user’s top 5 data. Then I added a button to the page, and image generation was ready to go!"
           imageLink="images\repeat-receipts\image-generation.png"
           altText="cli screenshot of list mode"
+          mediaWidth="4/5"
         />
         <ProjectBlock
           title="Hosting"
@@ -71,6 +80,7 @@ const RepeatReceipts: React.FC = () => {
           subheading
           imageLink="images\repeat-receipts\generate-playlist-button-feedback.png"
           altText="button state example"
+          mediaWidth="4/5"
         />
         <ProjectBlock
           title="Prompting to Follow Wrapped Playlists"
@@ -78,6 +88,7 @@ const RepeatReceipts: React.FC = () => {
           subheading
           imageLink="images\repeat-receipts\follow-playlists.png"
           altText="button state example"
+          mediaWidth="2/3"
         />
         <ProjectBlock
           title="Platform Agnostic Image Sharing"
