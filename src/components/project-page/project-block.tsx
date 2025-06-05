@@ -32,7 +32,11 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
     <div
       className={`flex flex-col ${
         paragraphText ? "md:flex-row" : "md:flex-col"
-      } px-4 gap-8`}
+      }
+      ${
+        paragraphText ? "gap-8" : "gap-2"
+      }
+      px-4`}
     >
       <div
         className={`${
