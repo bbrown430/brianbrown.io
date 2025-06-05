@@ -98,7 +98,7 @@ export function IconHero() {
         <HoverIconButton
           Icon={SiTailwindcss}
           color="blue"
-          tooltip="Tailwind CSS"
+          tooltip="Tailwind"
           stars={9}
         />
         <HoverIconButton

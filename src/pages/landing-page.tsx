@@ -8,9 +8,9 @@ import PageSubtitle from "../components/typography/page-subtitle";
 
 const LandingPage: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center my-8">
-      <div className="flex flex-col lg:flex-row items-center justify-center">
-        <div className="items-start max-w-[580px] p-4 gap-2 flex flex-col">
+    <div className="flex flex-col items-center justify-center lg:my-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 xl:gap-4">
+        <div className="items-start max-w-sm sm:max-w-md md:max-w-lg p-4 gap-2 flex flex-col mx-4">
           <PageTitle title="Brian Brown" />
           <PageSubtitle title="I’m a computer engineer based in Boston, MA. I’m passionate about
             creative solutions, automation, and innovation."/>
@@ -24,7 +24,7 @@ const LandingPage: React.FC = () => {
         </div>
         <IconHero />
       </div>
-      <div className="my-8">
+      <div className="lg:my-8">
         <Timeline />
       </div>
     </div>

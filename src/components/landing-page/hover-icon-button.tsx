@@ -52,7 +52,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
       {tooltip && (
         <div
           className={`
-            absolute translate-x-15 -translate-y-14
+            absolute translate-x-13 -translate-y-15 md:translate-x-15 md:-translate-y-14
             opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100
             transition-all duration-400 ease-out
             origin-bottom-left
@@ -68,7 +68,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
 
       <div
         className={`
-          flex items-center justify-center w-20 h-20 rounded-xl
+          flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl
           bg-flexoki-dark-tx ${colorClasses.hover}
           transition-colors duration-100 ease-out-out
           group
@@ -77,7 +77,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
         {svgSrc && svgContent ? (
           <div
             className={`
-              w-12 h-12 transition-colors duration-150 ease-out
+              w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-colors duration-150 ease-out
               ${colorClasses.text} group-hover:text-flexoki-dark-tx
               [&>svg]:w-full [&>svg]:h-full [&>svg]:fill-current
             `}
@@ -86,7 +86,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
         ) : (
           <IconComponent
             className={`
-              w-12 h-12 transition-colors duration-150 ease-out
+              w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 transition-colors duration-150 ease-out
               ${colorClasses.text} group-hover:text-flexoki-dark-tx
             `}
           />

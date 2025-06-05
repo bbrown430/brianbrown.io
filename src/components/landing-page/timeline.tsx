@@ -4,12 +4,19 @@ const Timeline: React.FC = () => {
   return (
     <div className="relative flex flex-col items-center py-10">
       <div className="relative flex flex-col gap-2">
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-background via-muted to-background z-0" />
+        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-gradient-to-b from-background via-muted to-background z-0" />
         <TimelineBlock
           side="right"
           color="blue"
           title="P.L.A.Y Piano"
-          skills={["SOLIDWORKS", "React", "Figma", "Python", "Flask", "Node.js"]}
+          skills={[
+            "SOLIDWORKS",
+            "React",
+            "Figma",
+            "Python",
+            "Flask",
+            "Node.js",
+          ]}
           description="An all-in-one piano learning solution, bringing an illuminated Guitar Hero experience to the piano. The 1st place winning Northeastern Spring 2024 ECE Capstone Design Project."
           navigate="/play-piano"
           lottiePath="/lotties/playpiano.json"
@@ -29,7 +36,13 @@ const Timeline: React.FC = () => {
           side="right"
           color="green"
           title="Search Time Crisis"
-          skills={["React", "OpenAI Whisper", "TypeScript", "Tailwind CSS", "Python"]}
+          skills={[
+            "React",
+            "OpenAI Whisper",
+            "TypeScript",
+            "Tailwind CSS",
+            "Python",
+          ]}
           description="Search through 450+ hours of the greatest internet radio show, Time Crisis with Ezra Koenig. [Featured on their Twitter!](https://x.com/timecrisis2000/status/1852534408227733859#m)"
           navigate="https://www.searchtimecrisis.com/"
           lottiePath="/lotties/searchtimecrisis.json"
@@ -64,7 +77,7 @@ const Timeline: React.FC = () => {
           navigate="https://bsquareddesigns.webflow.io/"
           lottiePath="/lotties/bsquared.json"
           date={"Since '15"}
-          lottieWidth="w-30"
+          lottieWidth="w-20 md:w-32 lg:w-40 xl:w-32"
         />
         <TimelineBlock
           side="right"

@@ -33,7 +33,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
   navigate,
   lottiePath,
   date,
-  lottieWidth = "w-48"
+  lottieWidth = "w-24 md:w-48 lg:w-40 xl:w-48",
 }) => {
   const navigateTo = useNavigate();
   const [animationData, setAnimationData] = useState(null);
@@ -70,10 +70,14 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
   const isLeftAlignment = alignment === "left";
 
   return (
-    <div className="flex flex-row items-center justify-between gap-4">
+    <div
+      className={`flex flex-row items-center gap-4 justify-center xl:justify-between ${
+        isLeftAlignment ? "lg:justify-start" : "lg:justify-end"
+      }`}
+    >
       {/* Content Section */}
       <div
-        className={`flex flex-col gap-1 w-88 ${alignmentClasses} ${
+        className={`flex flex-col gap-1 w-64 sm:w-72 md:w-88 lg:w-64 xl:w-88 ${alignmentClasses} ${
           isLeftAlignment ? "order-1" : "order-2"
         }`}
       >
@@ -107,7 +111,9 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
       </div>
 
       {/* Lottie Animation Section */}
-      <div className={`${lottieWidth} ${isLeftAlignment ? "order-2" : "order-1"}`}>
+      <div
+        className={`${lottieWidth} ${isLeftAlignment ? "order-2" : "order-1"}`}
+      >
         <Lottie animationData={animationData} loop={true} autoplay={true} />
       </div>
     </div>
