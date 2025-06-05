@@ -77,7 +77,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
     >
       {/* Content Section */}
       <div
-        className={`flex flex-col gap-1 w-64 sm:w-72 md:w-88 lg:w-64 xl:w-88 ${alignmentClasses} ${
+        className={`flex flex-col gap-1 w-56 sm:w-72 md:w-88 lg:w-64 xl:w-88 ${alignmentClasses} ${
           isLeftAlignment ? "order-1" : "order-2"
         }`}
       >
