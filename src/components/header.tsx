@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaAddressCard } from "react-icons/fa";
 import DropdownLinkButton from "./typography/dropdown-link";
 
 const Header: React.FC = () => {
@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 bg-background z-[500000000] border-b py-4 px-10 border-border">
       <div className="max-w-7xl mx-auto flex flex-row justify-between items-center">
         <a onClick={() => handleNavigation("/")} className="cursor-pointer">
-          <h4 className="text-3xl font-bold text-primary hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out">
+          <h4 className="text-xl sm:text-3xl font-bold text-primary hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out">
             Brian Brown
           </h4>
         </a>
@@ -25,9 +25,9 @@ const Header: React.FC = () => {
               <FaAngleDown className="transition-transform duration-100 ease-in-out group-hover:rotate-180" />
             </div>
             <div
-              className={`absolute translate-y-8 opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 right-0 transition-all duration-300 ease-out origin-top-right z-[500] pointer-events-none group-hover:pointer-events-auto`}
+              className={`absolute translate-y-8 opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-0 transition-all duration-300 ease-out origin-top sm:origin-top-right z-[500] pointer-events-none group-hover:pointer-events-auto`}
             >
-              <div className="px-4 py-4 rounded-xl bg-flexoki-black border-border border-2 text-primary font-semibold text-end flex flex-col gap-2 min-w-max">
+              <div className="px-4 py-4 rounded-xl bg-flexoki-black border-border border-2 text-primary font-semibold text-end flex flex-col gap-2 min-w-max max-w-[calc(100vw-2rem)]">
                 <DropdownLinkButton link="/play-piano" name="P.L.A.Y Piano" />
                 <DropdownLinkButton link="/smart-blinds" name="Smart Blinds" />
                 <DropdownLinkButton
@@ -51,14 +51,22 @@ const Header: React.FC = () => {
                   link="/repeat-receipts"
                   name="Repeat Receipts"
                 />
-                <DropdownLinkButton link="https://github.com/bbrown430/brianbrown.io" name="This Website" />
+                <DropdownLinkButton
+                  link="https://github.com/bbrown430/brianbrown.io"
+                  name="This Website"
+                />
               </div>
             </div>
           </div>
-          <a onClick={() => handleNavigation("/contact-me")} className="cursor-pointer">
-            <h4 className="text-lg font-semibold text-primary hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out">
+          <a
+            onClick={() => handleNavigation("/contact-me")}
+            className="cursor-pointer flex items-center gap-2"
+          >
+            <h4 className="text-lg font-semibold text-primary hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out hidden sm:block">
               Contact Me
             </h4>
+
+            <FaAddressCard className="block sm:hidden text-xl text-primary hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out" />
           </a>
         </div>
       </div>

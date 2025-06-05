@@ -29,7 +29,7 @@ function AnimatedRoutes() {
   }, [location]);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={true}>
       <div className="flex flex-col min-h-screen gap-12">
         <Header />
         <div className="flex flex-grow mt-32 justify-center items-center">
