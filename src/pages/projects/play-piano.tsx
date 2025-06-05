@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const PlayPiano: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center  gap-12">
       <ProjectHeader
         title="P.L.A.Y Piano"
         subtitle="An all-in-one piano learning solution, bringing an illuminated Guitar Hero experience to the piano. The 1st place winning Northeastern Spring 2024 ECE Capstone Design project."

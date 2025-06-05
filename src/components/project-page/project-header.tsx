@@ -73,22 +73,24 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           </div>
         )}
       </div>
-
-      <div className="flex justify-center flex-1">
-        {videoUrl && thumbnail ? (
-          <VideoPlayer
-            url={videoUrl}
-            thumbnail={thumbnail}
-            height={videoHeight}
-          />
-        ) : imgUrl ? (
-          <img
-            src={imgUrl}
-            alt={altText || title || "Project image"}
-            className="rounded-lg max-w-full h-auto"
-          />
-        ) : null}
-      </div>
+        
+      {(videoUrl && thumbnail) || imgUrl ? (
+        <div className="flex justify-center flex-1 p-4">
+          {videoUrl && thumbnail ? (
+        <VideoPlayer
+          url={videoUrl}
+          thumbnail={thumbnail}
+          height={videoHeight}
+        />
+          ) : imgUrl ? (
+        <img
+          src={imgUrl}
+          alt={altText || title || "Project image"}
+          className="rounded-lg max-w-full h-auto"
+        />
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 };

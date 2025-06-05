@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const SmartBlinds: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center  gap-12">
       <ProjectHeader
         title="Smart Blinds"
         subtitle="A smart solution to a daily problem."

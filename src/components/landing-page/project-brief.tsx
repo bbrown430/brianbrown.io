@@ -8,6 +8,7 @@ import {
   getColorClassesByString,
   isColorVariant,
 } from "@/utils/colors";
+import { parseText } from "@/utils/textParser";
 
 type Alignment = "left" | "right";
 
@@ -80,9 +81,9 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
         <h4 className={`text-lg font-semibold ${colorClasses.muted}`}>
           {skills.join(", ")}
         </h4>
-        <p className={`mb-2 text-muted-foreground ${alignmentClasses}`}>
-          {description}
-        </p>
+        <div className={`text-muted-foreground ${alignmentClasses}`}>
+          {parseText(description)}
+        </div>
         <div
           className={`flex items-center gap-2 ${
             isLeftAlignment ? "flex-row" : "flex-row-reverse"

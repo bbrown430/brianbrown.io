@@ -30,7 +30,7 @@ const Timeline: React.FC = () => {
           color="green"
           title="Search Time Crisis"
           skills={["React", "OpenAI Whisper", "TypeScript", "Tailwind CSS", "Python"]}
-          description="Search through 450+ hours of the greatest internet radio show, Time Crisis with Ezra Koenig. Tweeted about by the show themselves!"
+          description="Search through 450+ hours of the greatest internet radio show, Time Crisis with Ezra Koenig. [Featured on their Twitter!](https://x.com/timecrisis2000/status/1852534408227733859#m)"
           navigate="https://www.searchtimecrisis.com/"
           lottiePath="/lotties/searchtimecrisis.json"
           date={"Oct '24"}

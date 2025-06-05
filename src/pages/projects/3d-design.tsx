@@ -3,12 +3,12 @@ import ThreeDProjectBlock from "@/components/project-page/3d-project-block";
 
 const ThreeDDesign: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-12">
+    <div className="flex flex-col items-start justify-center gap-12">
       <ProjectHeader
         title="3D Design"
-        subtitle="I love 3D printing to solve big and small inconveniences I encounter. Here are a few examples!"
+        subtitle="I love 3D printing to solve life's big and small inconveniences. Here are a few examples!"
       />
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-20">
         <ThreeDProjectBlock
           title="Wavy Lamp"
           theProblem="I want cozy lighting in my room, but I don't want to shell out the prices for a fun designer lamp."

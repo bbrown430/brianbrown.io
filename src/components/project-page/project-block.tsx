@@ -2,6 +2,7 @@ import React from "react";
 import SectionHeader from "../typography/section-header";
 import VideoPlayer from "../video-player";
 import SectionSubheader from "../typography/section-subheader";
+import { parseText } from "@/utils/textParser";
 
 interface ProjectBlockProps {
   imageLink?: string;
@@ -26,72 +27,12 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
   subheading = false,
   timelineImage,
 }) => {
-  const parseText = (text: string) => {
-    const lines = text.split(/\n+/);
-    const elements: React.ReactNode[] = [];
-
-    let inList = false;
-    let listItems: React.ReactNode[] = [];
-
-    lines.forEach((line, index) => {
-      const trimmed = line.trim();
-
-      if (/^[-*]\s+/.test(trimmed)) {
-        inList = true;
-        const content = trimmed.replace(/^[-*]\s+/, "");
-        listItems.push(<li key={`li-${index}`}>{formatInline(content)}</li>);
-      } else {
-        if (inList) {
-          elements.push(
-            <ul key={`ul-${index}`} className="list-disc list-inside mb-2">
-              {listItems}
-            </ul>
-          );
-          listItems = [];
-          inList = false;
-        }
-
-        if (trimmed !== "") {
-          elements.push(
-            <p key={`p-${index}`} className="mb-2">
-              {formatInline(trimmed)}
-            </p>
-          );
-        } else {
-          elements.push(<br key={`br-${index}`} />);
-        }
-      }
-    });
-
-    if (inList) {
-      elements.push(
-        <ul key={`ul-final`} className="list-disc list-inside mb-2">
-          {listItems}
-        </ul>
-      );
-    }
-
-    return elements;
-  };
-
-  const formatInline = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith("**") && part.endsWith("**")) {
-        return <strong key={index}>{part.slice(2, -2)}</strong>;
-      } else if (part.startsWith("*") && part.endsWith("*")) {
-        return <em key={index}>{part.slice(1, -1)}</em>;
-      } else {
-        return part;
-      }
-    });
-  };
 
   return (
     <div
       className={`flex flex-col ${
         paragraphText ? "md:flex-row" : "md:flex-col"
-      } px-4`}
+      } px-4 gap-8`}
     >
       <div
         className={`${
@@ -123,7 +64,7 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
         </div>
       </div>
       {(imageLink || videoUrl) && (
-        <div className="md:w-2/5 flex justify-center items-center">
+        <div className="md:w-2/5 flex justify-center items-center p-2">
           {videoUrl ? (
             <VideoPlayer
               url={videoUrl}
@@ -134,7 +75,7 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
             <img
               src={imageLink}
               alt={altText || title || "Project image"}
-              className="max-w-full h-auto rounded-lg object-cover pt-2"
+              className="max-w-full h-auto rounded-lg object-cover"
             />
           )}
         </div>

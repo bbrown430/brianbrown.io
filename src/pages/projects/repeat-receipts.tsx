@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const RepeatReceipts: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center  gap-12">
       <ProjectHeader
         title="Repeat Receipts"
         subtitle="Ever wonder what songs you keep coming back to year after year? With Repeat Receipts, wonder no more."

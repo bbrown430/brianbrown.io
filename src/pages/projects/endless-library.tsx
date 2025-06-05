@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const EndlessLibrary: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center  gap-12">
       <ProjectHeader
         title="Endless Library"
         subtitle="A tool to download more books than you'll ever read."
@@ -23,11 +23,11 @@ const EndlessLibrary: React.FC = () => {
         />
         <ProjectBlock
           title="Anna's Archive Scraper"
-          paragraphText="When searching for the best aggregator of e-books, I stumbled upon Anna’s Archive. Unfortunately, they do not have an API. Fortunately, their website is very easy to scrape using Python and Beautiful Soup. The scraping process begins by formatting a URL to include the search term, along with the search filters (English, .epub, hosted on libgen). The book entries that are returned from that webpage are then scraped for the title, author, metadata, and MD5. The MD5 is how books are addressed on the libgen servers, so appending it to the proper base URL yields the relevant download link for the book, without the need for additional scraping. From there, the list of entries will be filtered, returning only entries that are relevant to the user."
+          paragraphText="When searching for the best aggregator of e-books, I stumbled upon [Anna’s Archive](https://annas-archive.org/). Unfortunately, they do not have an API. Fortunately, their website is very easy to scrape using Python and Beautiful Soup. The scraping process begins by formatting a URL to include the search term, along with the search filters (English, .epub, hosted on libgen). The book entries that are returned from that webpage are then scraped for the title, author, metadata, and MD5. The MD5 is how books are addressed on the libgen servers, so appending it to the proper base URL yields the relevant download link for the book, without the need for additional scraping. From there, the list of entries will be filtered, returning only entries that are relevant to the user."
         />
         <ProjectBlock
           title="Goodreads Scraper"
-          paragraphText="Goodreads is the most popular book based social network. One of the main features of Goodreads is the ability to make and view lists of books. I sought out to scrape these lists, and then pass them into the Anna’s Archive scraper, allowing for a more efficient, automated experience. Unfortunately, Goodreads does not have an API either. Fortunately, it is also very easy to scrape. Goodreads has three main types of lists: personal lists (want to read, read), Listopia lists (aggregated lists voted on by the community), and series lists. While the formatting differs slightly, they all have a similar structure, and house the same metadata in their entries. When a user inputs the URL to one of these lists, the program determines which type of list it is, and scrapes accordingly. Each entry in the list is scraped for the title and author, and are then passed as the search terms to the Anna's Archive scraper."
+          paragraphText="[Goodreads](https://www.goodreads.com/) is the most popular book based social network. One of the main features of Goodreads is the ability to make and view lists of books. I sought out to scrape these lists, and then pass them into the Anna’s Archive scraper, allowing for a more efficient, automated experience. Unfortunately, Goodreads does not have an API either. Fortunately, it is also very easy to scrape. Goodreads has three main types of lists: [personal lists](https://www.goodreads.com/review/list/86856541-brian-brown?shelf=to-read) (want to read, read), [Listopia lists](https://www.goodreads.com/list/show/264.Books_That_Everyone_Should_Read_At_Least_Once) (aggregated lists voted on by the community), and [series](https://www.goodreads.com/series/73758-the-hunger-games) lists. While the formatting differs slightly, they all have a similar structure, and house the same metadata in their entries. When a user inputs the URL to one of these lists, the program determines which type of list it is, and scrapes accordingly. Each entry in the list is scraped for the title and author, and are then passed as the search terms to the Anna's Archive scraper."
         />
         <ProjectBlock
           title="Kindle Intergration"

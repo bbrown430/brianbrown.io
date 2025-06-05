@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                   link="/repeat-receipts"
                   name="Repeat Receipts"
                 />
-                <DropdownLinkButton link="/" name="This Website" />
+                <DropdownLinkButton link="https://github.com/bbrown430/brianbrown.io" name="This Website" />
               </div>
             </div>
           </div>

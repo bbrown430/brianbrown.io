@@ -88,7 +88,7 @@ const ThreeDProjectBlock: React.FC<ThreeDProjectBlockProps> = ({
       <SectionHeader title={title} />
 
       {/* Problem and Solution Row */}
-      <div className="flex flex-col md:flex-row mt-2 gap-6">
+      <div className="flex flex-col md:flex-row mt-2 gap-12">
         {/* The Problem */}
         <div className="flex-1 flex flex-col gap-2">
           <SectionSubheader title="The Problem" />
@@ -108,16 +108,18 @@ const ThreeDProjectBlock: React.FC<ThreeDProjectBlockProps> = ({
 
       {/* Render and Result Row */}
       {(renderImage || resultImage) && (
-        <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-col md:flex-row gap-12">
           {/* The Render */}
           {renderImage && (
             <div className="flex-1 flex flex-col gap-4">
               <SectionSubheader title="The Renders" />
-              <img
-                src={renderImage}
-                alt={renderAltText || "3D Render"}
-                className="max-w-full max-h-128 rounded-lg object-contain"
-              />
+              <div className="flex justify-center items-center">
+                <img
+                  src={renderImage}
+                  alt={renderAltText || "3D Render"}
+                  className="max-h-120 w-auto rounded-lg object-contain"
+                />
+              </div>
             </div>
           )}
 
@@ -125,11 +127,13 @@ const ThreeDProjectBlock: React.FC<ThreeDProjectBlockProps> = ({
           {resultImage && (
             <div className="flex-1 flex flex-col gap-4">
               <SectionSubheader title="The Result" />
-              <img
-                src={resultImage}
-                alt={resultAltText || "Final Result"}
-                className="max-w-full max-h-128 rounded-lg object-contain"
-              />
+              <div className="flex justify-center items-center">
+                <img
+                  src={resultImage}
+                  alt={resultAltText || "Final Result"}
+                  className="max-h-120 w-auto rounded-lg object-contain"
+                />
+              </div>
             </div>
           )}
         </div>
