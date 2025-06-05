@@ -33,7 +33,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
   navigate,
   lottiePath,
   date,
-  lottieWidth = "w-24 md:w-48 lg:w-40 xl:w-48",
+  lottieWidth = "w-24 sm:w-40 md:w-48 lg:w-40 xl:w-48",
 }) => {
   const navigateTo = useNavigate();
   const [animationData, setAnimationData] = useState(null);

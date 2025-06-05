@@ -77,7 +77,7 @@ const Timeline: React.FC = () => {
           navigate="https://bsquareddesigns.webflow.io/"
           lottiePath="/lotties/bsquared.json"
           date={"Since '15"}
-          lottieWidth="w-20 md:w-32 lg:w-40 xl:w-32"
+          lottieWidth="w-32 lg:w-40 xl:w-32"
         />
         <TimelineBlock
           side="right"

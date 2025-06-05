@@ -45,12 +45,12 @@ const TimelineBlock: React.FC<TimelineBlockProps> = ({
 
   return (
     <div
-      className={`flex items-center justify-center w-full ${className} z-100`}
+      className={`flex items-center justify-center  ${className} z-100`}
     >
       {/* Left Side: Show only if side is 'left' OR on medium+ screens */}
       {(side === "left" || side === "right") && (
         <div
-          className={`w-140 p-4 ${side === "left" ? "" : "hidden lg:block"}`}
+          className={`lg:w-140 p-4 ${side === "left" ? "" : "hidden lg:block"}`}
         >
           {side === "left" ? projectBrief : null}
         </div>
@@ -64,7 +64,7 @@ const TimelineBlock: React.FC<TimelineBlockProps> = ({
       {/* Right Side: Show only if side is 'right' OR on medium+ screens */}
       {(side === "right" || side === "left") && (
         <div
-          className={`w-140 p-4 ${side === "right" ? "" : "hidden lg:block"}`}
+          className={`lg:w-140 p-4 ${side === "right" ? "" : "hidden lg:block"}`}
         >
           {side === "right" ? projectBrief : null}
         </div>
