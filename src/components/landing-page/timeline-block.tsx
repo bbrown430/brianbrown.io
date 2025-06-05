@@ -50,7 +50,7 @@ const TimelineBlock: React.FC<TimelineBlockProps> = ({
       {/* Left Side: Show only if side is 'left' OR on medium+ screens */}
       {(side === "left" || side === "right") && (
         <div
-          className={`lg:w-140 p-4 ${side === "left" ? "" : "hidden lg:block"}`}
+          className={`lg:w-140 lg:p-4 ${side === "left" ? "" : "hidden lg:block"}`}
         >
           {side === "left" ? projectBrief : null}
         </div>
@@ -64,7 +64,7 @@ const TimelineBlock: React.FC<TimelineBlockProps> = ({
       {/* Right Side: Show only if side is 'right' OR on medium+ screens */}
       {(side === "right" || side === "left") && (
         <div
-          className={`lg:w-140 p-4 ${side === "right" ? "" : "hidden lg:block"}`}
+          className={`lg:w-140 lg:p-4 ${side === "right" ? "" : "hidden lg:block"}`}
         >
           {side === "right" ? projectBrief : null}
         </div>

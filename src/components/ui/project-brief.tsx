@@ -60,7 +60,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
     <div className="flex flex-row items-center justify-between gap-4">
       {/* Content Section */}
       <div
-        className={`flex flex-col gap-1 w-88 ${alignmentClasses} ${
+        className={`flex flex-col gap-1 lg:w-88 ${alignmentClasses} ${
           isLeftAlignment ? "order-1" : "order-2"
         }`}
       >
