@@ -1,14 +1,11 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { KindleCard } from "./components/kindle-card";
-import { Toaster } from "@/components/ui/sonner";
-
+import { useDocumentTitle } from "./hooks/useDocumentTitle";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import LandingTitle from "./pages/landing-page";
@@ -25,6 +22,7 @@ import ContactMe from "./pages/contact-me";
 
 function AnimatedRoutes() {
   const location = useLocation();
+  useDocumentTitle();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,9 +39,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <LandingTitle />
@@ -55,9 +53,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <PlayPiano />
@@ -69,9 +67,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <SmartBlinds />
@@ -83,9 +81,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <RoboticBallCollector />
@@ -97,9 +95,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <EndlessLibrary />
@@ -111,26 +109,12 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <RepeatReceipts />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/kindle"
-              element={
-                <motion.div
-                  className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
-                  transition={{ duration: 0.4 }}
-                >
-                  <KindleCard />
                 </motion.div>
               }
             />
@@ -139,9 +123,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <ThreeDDesign />
@@ -153,9 +137,9 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0,}}
-                  animate={{ opacity: 1}}
-                  exit={{ opacity: 0}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
                   <NotFound />
@@ -167,8 +151,8 @@ function AnimatedRoutes() {
               element={
                 <motion.div
                   className="max-w-7xl mx-12"
-                  initial={{ opacity: 0}}
-                  animate={{ opacity: 1}}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
                 >
@@ -189,7 +173,6 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Router>
         <AnimatedRoutes />
-        <Toaster />
       </Router>
     </ThemeProvider>
   );
