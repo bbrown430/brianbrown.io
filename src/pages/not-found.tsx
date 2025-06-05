@@ -1,4 +1,3 @@
-import ProjectHeader from "@/components/project-page/project-header";
 import PageSubtitle from "@/components/typography/page-subtitle";
 import PageTitle from "@/components/typography/page-title";
 

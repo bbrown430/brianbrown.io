@@ -3,8 +3,8 @@ import {
   FaReact,
   FaJava,
   FaGitAlt,
-  FaNodeJs,
   FaAws,
+  FaDocker,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -81,9 +81,9 @@ export function IconHero() {
           stars={7}
         />
         <HoverIconButton
-          Icon={FaNodeJs}
-          color="green"
-          tooltip="Node.js"
+          Icon={FaDocker}
+          color="blue"
+          tooltip="Docker"
           stars={6}
         />
       </div>
