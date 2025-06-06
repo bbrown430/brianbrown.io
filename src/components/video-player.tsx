@@ -4,26 +4,26 @@ import ReactPlayer from "react-player";
 interface VideoPlayerProps {
   url: string;
   thumbnail: string;
-  height?: string;
+  className?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   url,
   thumbnail,
-  height = "360px",
+  className = "",
 }) => {
   const [playing, setPlaying] = useState(false);
 
-  const numericHeight = parseInt(height);
-  const width =
-    height.endsWith("px") && !isNaN(numericHeight)
-      ? `${(numericHeight * 16) / 9}px`
-      : "auto";
-
   return (
     <div
-      className="rounded-lg overflow-hidden shadow-lg"
-      style={{ width, height }}
+      className={`
+        w-full 
+        aspect-video 
+        rounded-lg 
+        overflow-hidden 
+        shadow-lg
+        ${className}
+      `}
     >
       <ReactPlayer
         url={url}

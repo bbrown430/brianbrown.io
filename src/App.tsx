@@ -1,4 +1,3 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import { useDocumentTitle } from "./hooks/useDocumentTitle";
 import {
   BrowserRouter as Router,
@@ -30,7 +29,7 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode="wait" initial={true}>
-      <div className="flex flex-col min-h-screen gap-12">
+      <div className="flex flex-col bg-background min-h-screen gap-12">
         <Header />
         <div className="flex flex-grow mt-32 justify-center items-center">
           <Routes location={location} key={location.pathname}>
@@ -170,11 +169,9 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Router>
         <AnimatedRoutes />
       </Router>
-    </ThemeProvider>
   );
 }
 

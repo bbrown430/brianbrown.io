@@ -20,140 +20,80 @@ import {
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandCpp, TbSql } from "react-icons/tb";
 import { FiFigma } from "react-icons/fi";
-
+import { ColorVariant } from "@/utils/colors";
 import HoverIconButton from "./hover-icon-button";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.025,
+      delayChildren: 0,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+};
 
 export function IconHero() {
+  // Define your triangle layout as rows of props
+  const iconRows = [
+    [
+      { Icon: FaPython, color: "yellow" as ColorVariant, tooltip: "Python", stars: 8 },
+    ],
+    [
+      { Icon: FaReact, color: "cyan" as ColorVariant, tooltip: "React", stars: 7 },
+      { Icon: SiTypescript, color: "blue" as ColorVariant, tooltip: "TypeScript", stars: 7 },
+    ],
+    [
+      { Icon: FaJava, color: "orange" as ColorVariant, tooltip: "Java", stars: 7 },
+      { Icon: TbBrandCSharp, color: "purple" as ColorVariant, tooltip: "C#", stars: 7 },
+      { Icon: TbBrandCpp, color: "green" as ColorVariant, tooltip: "C++", stars: 6 },
+    ],
+    [
+      { Icon: FaAws, color: "orange" as ColorVariant, tooltip: "AWS", stars: 8 },
+      { Icon: TbSql, color: "blue" as ColorVariant, tooltip: "SQL", stars: 9 },
+      { Icon: SiFastapi, color: "cyan" as ColorVariant, tooltip: "FastAPI", stars: 7 },
+      { Icon: FaDocker, color: "blue" as ColorVariant, tooltip: "Docker", stars: 6 },
+    ],
+    [
+      { Icon: FiFigma, color: "cyan" as ColorVariant, tooltip: "Figma", stars: 9 },
+      { Icon: SiTailwindcss, color: "blue" as ColorVariant, tooltip: "Tailwind CSS", stars: 9 },
+      { Icon: SiAdobeaftereffects, color: "purple" as ColorVariant, tooltip: "After Effects", stars: 9 },
+      { Icon: SiAdobephotoshop, color: "blue" as ColorVariant, tooltip: "Photoshop", stars: 8 },
+      { Icon: SiAdobeillustrator, color: "orange" as ColorVariant, tooltip: "Illustrator", stars: 8 },
+    ],
+    [
+      { Icon: FaGitAlt, color: "red" as ColorVariant, tooltip: "Git", stars: 9 },
+      { Icon: SiMongodb, color: "green" as ColorVariant, tooltip: "MongoDB", stars: 7 },
+      { Icon: SiArduino, color: "cyan" as ColorVariant, tooltip: "Arduino", stars: 7 },
+      { Icon: SiKicad, color: "blue" as ColorVariant, tooltip: "KiCad", stars: 6 },
+      { Icon: SiNotion, color: "base" as ColorVariant, tooltip: "Notion", stars: 9,  },
+      { svgSrc: "/logos/solidworks.svg", color: "red" as ColorVariant, tooltip: "SOLIDWORKS", stars: 8, inverse: true},
+    ],
+  ];
+  
+
   return (
-    <div className="flex flex-col items-start gap-2">
-      <div className="flex gap-2">
-        <HoverIconButton
-          Icon={FaPython}
-          color="yellow"
-          tooltip="Python"
-          stars={8}
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <HoverIconButton
-          Icon={FaReact}
-          color="cyan"
-          tooltip="React"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={SiTypescript}
-          color="blue"
-          tooltip="TypeScript"
-          stars={7}
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <HoverIconButton
-          Icon={FaJava}
-          color="orange"
-          tooltip="Java"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={TbBrandCSharp}
-          color="purple"
-          tooltip="C#"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={TbBrandCpp}
-          color="green"
-          tooltip="C++"
-          stars={6}
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <HoverIconButton Icon={FaAws} color="orange" tooltip="AWS" stars={8} />
-        <HoverIconButton Icon={TbSql} color="blue" tooltip="SQL" stars={9} />
-        <HoverIconButton
-          Icon={SiFastapi}
-          color="cyan"
-          tooltip="FastAPI"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={FaDocker}
-          color="blue"
-          tooltip="Docker"
-          stars={6}
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <HoverIconButton
-          Icon={FiFigma}
-          color="cyan"
-          tooltip="Figma"
-          stars={9}
-        />
-        <HoverIconButton
-          Icon={SiTailwindcss}
-          color="blue"
-          tooltip="Tailwind"
-          stars={9}
-        />
-        <HoverIconButton
-          Icon={SiAdobeaftereffects}
-          color="purple"
-          tooltip="After Effects"
-          stars={9}
-        />
-        <HoverIconButton
-          Icon={SiAdobephotoshop}
-          color="blue"
-          tooltip="Photoshop"
-          stars={8}
-        />
-        <HoverIconButton
-          Icon={SiAdobeillustrator}
-          color="orange"
-          tooltip="Illustrator"
-          stars={8}
-        />
-      </div>
-
-      <div className="flex gap-2">
-        <HoverIconButton Icon={FaGitAlt} color="red" tooltip="Git" stars={9} />
-        <HoverIconButton
-          Icon={SiMongodb}
-          color="green"
-          tooltip="MongoDB"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={SiArduino}
-          color="cyan"
-          tooltip="Arduino"
-          stars={7}
-        />
-        <HoverIconButton
-          Icon={SiKicad}
-          color="blue"
-          tooltip="KiCad"
-          stars={6}
-        />
-        <HoverIconButton
-          Icon={SiNotion}
-          color="base"
-          tooltip="Notion"
-          stars={9}
-        />
-        <HoverIconButton
-          svgSrc="/logos/solidworks.svg"
-          color="red"
-          tooltip="SOLIDWORKS"
-          stars={8}
-        />
-      </div>
-    </div>
+    <motion.div
+      className="flex flex-col items-start gap-2"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      {iconRows.map((row, rowIndex) => (
+        <div key={rowIndex} className="flex gap-2">
+          {row.map((props, i) => (
+            <motion.div key={i} variants={item}>
+              <HoverIconButton {...props} />
+            </motion.div>
+          ))}
+        </div>
+      ))}
+    </motion.div>
   );
 }

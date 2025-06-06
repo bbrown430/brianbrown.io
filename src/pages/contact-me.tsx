@@ -7,7 +7,7 @@ const ContactMe: React.FC = () => {
     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
       <div className="flex flex-col items-center justify-start gap-4">
         <PageTitle title="Contact Me!"></PageTitle>
-        <div className="flex flex-row justify-start sm:justify-center w-full gap-4">
+        <div className="flex flex-row justify-center w-full gap-4">
           <LogoButton
             icon={FaEnvelope}
             link="mailto:brianbrown2002@gmail.com"

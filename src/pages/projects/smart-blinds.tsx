@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const SmartBlinds: React.FC = () => {
   return (
-    <div className="flex flex-col items-between justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center gap-6 md:gap-12">
       <ProjectHeader
         title="Smart Blinds"
         subtitle="A smart solution to a daily problem."
@@ -13,7 +13,7 @@ const SmartBlinds: React.FC = () => {
         buttonColor="yellow"
         buttonLink="https://github.com/bbrown430/smartblinds"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:gap-4">
         <ProjectBlock
           title="The Problem"
           paragraphText="I love the glow of natural light, but I hate having to get up and fumble with my blinds on both windows multiple times a day."

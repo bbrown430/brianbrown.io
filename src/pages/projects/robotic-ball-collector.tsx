@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const RoboticBallCollector: React.FC = () => {
   return (
-    <div className="flex flex-col items-between justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center gap-6 md:gap-12">
       <ProjectHeader
         title="Robotic Ball Collector"
         subtitle="The first-place award winning robot, from the iRobot Fall 2023 Hungry Hungry Hippo Intern Challenge."
@@ -13,7 +13,7 @@ const RoboticBallCollector: React.FC = () => {
         buttonLink="https://github.com/bbrown430/robotic-ball-collector"
         buttonColor="magenta"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:gap-4">
         <ProjectBlock
           title="The Problem"
           paragraphText="Collect and drop off as many ball pit balls as possible, as quickly as possible, and do a better job than the opposing team."

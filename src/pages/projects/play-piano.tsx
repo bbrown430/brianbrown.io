@@ -3,14 +3,14 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const PlayPiano: React.FC = () => {
   return (
-    <div className="flex flex-col items-between justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center gap-6 md:gap-12">
       <ProjectHeader
         title="P.L.A.Y Piano"
         subtitle="An all-in-one piano learning solution, bringing an illuminated Guitar Hero experience to the piano. The 1st place winning Northeastern Spring 2024 ECE Capstone Design project."
         videoUrl="https://video.gumlet.io/684057f80f8d7a0518328bbc/68405815ed94500acc29efc5/main.m3u8"
         thumbnail="https://video.gumlet.io/684057f80f8d7a0518328bbc/68405815ed94500acc29efc5/thumbnail-1-0.png?v=1749047386624"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:gap-4">
         <ProjectBlock
           title="The Problem"
           paragraphText="A gamified piano learning system, rolled into an all-in-one physical product. With LEDs above and inside the keys, the falling note effect will show the user where and when to press the keys."

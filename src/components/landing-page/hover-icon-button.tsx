@@ -1,4 +1,3 @@
-// Updated HoverIconButton.tsx
 import React, { useState, useEffect } from "react";
 import { FaCog } from "react-icons/fa";
 import { IconType } from "react-icons";
@@ -10,6 +9,7 @@ interface HoverIconButtonProps {
   color?: ColorVariant;
   tooltip?: string;
   stars?: number;
+  inverse?: boolean;
 }
 
 const renderStars = (score: number) => {
@@ -30,10 +30,23 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
   color = "red",
   tooltip,
   stars,
+  inverse = false,
 }) => {
   const [svgContent, setSvgContent] = useState<string>("");
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   const colorClasses = getColorClasses(color);
   const IconComponent = Icon || FaCog;
+
+  useEffect(() => {
+    const checkTouch = () => {
+      setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    };
+    checkTouch();
+    window.addEventListener("resize", checkTouch);
+    return () => window.removeEventListener("resize", checkTouch);
+  }, []);
 
   useEffect(() => {
     if (svgSrc) {
@@ -47,19 +60,48 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
     }
   }, [svgSrc]);
 
+  const handleClick = () => {
+    if (isTouchDevice) {
+      setTooltipVisible((prev) => !prev);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (!isTouchDevice) setTooltipVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isTouchDevice) setTooltipVisible(false);
+  };
+
+  const handleBlur = () => {
+    setTooltipVisible(false);
+  };
+
   return (
-    <div className="relative group">
+    <div
+      className="relative group"
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onBlur={handleBlur}
+      tabIndex={0}
+    >
       {tooltip && (
         <div
           className={`
-            absolute translate-x-13 -translate-y-15 md:translate-x-15 md:-translate-y-14
-            opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100
-            transition-all duration-400 ease-out
-            origin-bottom-left
-            pointer-events-none z-[500]
+            absolute
+            ${
+              inverse
+                ? "-translate-x-22 sm:-translate-x-18 lg:-translate-x-14 lg:origin-bottom-right xl:translate-x-15 xl:origin-bottom-left"
+                : "translate-x-8 sm:translate-x-13 origin-bottom-left"
+            }
+            md:translate-x-15 -translate-y-14 md:origin-bottom-left
+            transition-all duration-400 ease-out pointer-events-none z-[500]
+            ${tooltipVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"}
           `}
         >
-          <div className="px-3 py-3 rounded-xl leading-snug bg-flexoki-black border-primary border-2 text-primary text-start">
+          <div className="px-3 py-3 rounded-xl leading-snug bg-flexoki-black border-primary border-2 text-primary text-start pointer-events-auto">
             {tooltip}
             {stars !== undefined && renderStars(stars)}
           </div>
@@ -70,8 +112,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({
         className={`
           flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl
           bg-flexoki-dark-tx ${colorClasses.hover}
-          transition-colors duration-100 ease-out-out
-          group
+          transition-colors duration-100 ease-out-out group
         `}
       >
         {svgSrc && svgContent ? (

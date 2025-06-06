@@ -15,7 +15,6 @@ interface ProjectHeaderProps {
   subtitle: string;
   videoUrl?: string;
   thumbnail?: string;
-  videoHeight?: string;
   imgUrl?: string;
   altText?: string;
   buttons?: ButtonConfig[];
@@ -29,7 +28,6 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   subtitle,
   videoUrl,
   thumbnail,
-  videoHeight,
   imgUrl,
   altText,
   buttons,
@@ -39,25 +37,31 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   buttonColor = "blue",
 }) => {
   // Create buttons array from either new or legacy props
-  const buttonsToRender = buttons || (buttonText && buttonLink ? [{
-    text: buttonText,
-    link: buttonLink,
-    color: buttonColor
-  }] : []);
+  const buttonsToRender =
+    buttons ||
+    (buttonText && buttonLink
+      ? [
+          {
+            text: buttonText,
+            link: buttonLink,
+            color: buttonColor,
+          },
+        ]
+      : []);
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-      <div className="items-start flex-1 p-4 gap-2 flex flex-col">
+    <div className="flex flex-col md:flex-row gap-0 md:gap-8 items-center justify-center">
+      <div className="items-start md:flex-1 p-0 md:p-4 gap-2 flex flex-col w-full">
         <PageTitle title={title} />
         <PageSubtitle title={subtitle} />
 
         {buttonsToRender.length > 0 && (
           <div className="flex flex-wrap mt-2 gap-2">
             {buttonsToRender.map((button, index) => (
-              <a 
+              <a
                 key={index}
-                href={button.link} 
-                target="_blank" 
+                href={button.link}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
@@ -73,21 +77,21 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           </div>
         )}
       </div>
-        
+
       {(videoUrl && thumbnail) || imgUrl ? (
-        <div className="flex justify-center flex-1 p-4">
+        <div className="flex justify-center md:flex-1 my-4 sm:mt-0 sm:p-4 w-full">
           {videoUrl && thumbnail ? (
-        <VideoPlayer
-          url={videoUrl}
-          thumbnail={thumbnail}
-          height={videoHeight}
-        />
+            <VideoPlayer
+              url={videoUrl}
+              thumbnail={thumbnail}
+              className="w-full max-w-2xl"
+            />
           ) : imgUrl ? (
-        <img
-          src={imgUrl}
-          alt={altText || title || "Project image"}
-          className="rounded-lg max-w-full h-auto"
-        />
+            <img
+              src={imgUrl}
+              alt={altText || title || "Project image"}
+              className="rounded-lg max-w-full h-auto"
+            />
           ) : null}
         </div>
       ) : null}

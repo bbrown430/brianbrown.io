@@ -81,7 +81,7 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
           isLeftAlignment ? "order-1" : "order-2"
         }`}
       >
-        <h2 className="text-4xl font-bold">{title}</h2>
+        <h2 className="text-4xl font-bold tracking-tight">{title}</h2>
         <h4 className={`text-lg font-semibold ${colorClasses.muted}`}>
           {skills.join(", ")}
         </h4>
@@ -93,15 +93,19 @@ const ProjectBrief: React.FC<ProjectBriefProps> = ({
             isLeftAlignment ? "flex-row" : "flex-row-reverse"
           }`}
         >
-          <Button
+            <Button
             variant="color-outline"
             color={color}
             size="lg"
             className="text-lg font-bold"
             onClick={handleNavigate}
-          >
-            Explore
-          </Button>
+            >
+            {navigate.includes("github")
+              ? "View Repo"
+              : navigate.startsWith("https")
+              ? "Visit Site"
+              : "Explore"}
+            </Button>
           <p
             className={`font-semibold ${alignmentClasses} ${colorClasses.muted}`}
           >

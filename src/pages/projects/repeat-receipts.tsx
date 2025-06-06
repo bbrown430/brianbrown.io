@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const RepeatReceipts: React.FC = () => {
   return (
-    <div className="flex flex-col items-between justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center gap-6 md:gap-12">
       <ProjectHeader
         title="Repeat Receipts"
         subtitle="Ever wonder what songs you keep coming back to year after year? With Repeat Receipts, wonder no more."
@@ -21,7 +21,7 @@ const RepeatReceipts: React.FC = () => {
           },
         ]}
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:gap-4">
         <ProjectBlock
           title="The Problem"
           paragraphText="Each year I look forward to my Spotify Wrapped playlist, to see what songs I kept in heavy rotation that year. This got me thinking, what songs have I had in my Wrapped playlists for multiple years?"

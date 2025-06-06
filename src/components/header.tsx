@@ -2,37 +2,56 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleDown, FaAddressCard } from "react-icons/fa";
 import DropdownLinkButton from "./typography/dropdown-link";
+import { getHeaderProjects } from "../data/projects";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Get projects data for header dropdown
+  const headerProjects = getHeaderProjects();
+
+  useEffect(() => {
+    const checkTouch = () => {
+      setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    };
+    checkTouch();
+    window.addEventListener("resize", checkTouch);
+    return () => window.removeEventListener("resize", checkTouch);
+  }, []);
 
   const handleNavigation = (path: string) => {
     navigate(path);
   };
 
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    if (isTouchDevice) {
+      setIsDropdownOpen(!isDropdownOpen);
+    }
   };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   const handleDropdownNavigation = (path: string) => {
     setIsDropdownOpen(false);
-    if (path.startsWith('http')) {
-      window.open(path, '_blank');
+    if (path.startsWith("http")) {
+      window.open(path, "_blank");
     } else {
       handleNavigation(path);
     }
@@ -48,68 +67,36 @@ const Header: React.FC = () => {
         </a>
         <div className="flex flex-row items-center gap-8">
           <div className="relative group" ref={dropdownRef}>
-            <div 
+            <div
               className="flex flex-row items-center gap-2 cursor-pointer"
               onClick={toggleDropdown}
             >
               <h6 className="text-lg font-semibold">Projects</h6>
-              <FaAngleDown className={`transition-transform duration-100 ease-in-out ${
-                isDropdownOpen ? 'rotate-180' : 'group-hover:rotate-180'
-              }`} />
+              <FaAngleDown
+                className={`transition-transform duration-100 ease-in-out ${
+                  isDropdownOpen ? "rotate-180" : "group-hover:rotate-180"
+                }`}
+              />
             </div>
             <div
-              className={`absolute translate-y-8 opacity-0 scale-100 ${
-                isDropdownOpen 
-                  ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto' 
-                  : 'group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto'
+              className={`absolute translate-y-2 opacity-0 scale-100 ${
+                isDropdownOpen
+                  ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                  : "group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto"
               } left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-0 transition-all duration-300 ease-out origin-top sm:origin-top-right z-[500]`}
             >
               <div className="px-4 py-4 rounded-xl bg-flexoki-black border-border border-2 text-primary font-semibold text-end flex flex-col gap-2 min-w-max max-w-[calc(100vw-2rem)]">
-                <div onClick={() => handleDropdownNavigation("/play-piano")}>
-                  <DropdownLinkButton link="/play-piano" name="P.L.A.Y Piano" />
-                </div>
-                <div onClick={() => handleDropdownNavigation("/smart-blinds")}>
-                  <DropdownLinkButton link="/smart-blinds" name="Smart Blinds" />
-                </div>
-                <div onClick={() => handleDropdownNavigation("https://www.searchtimecrisis.com/")}>
-                  <DropdownLinkButton
-                    link="https://www.searchtimecrisis.com/"
-                    name="Search Time Crisis"
-                  />
-                </div>
-                <div onClick={() => handleDropdownNavigation("/endless-library")}>
-                  <DropdownLinkButton
-                    link="/endless-library"
-                    name="Endless Library"
-                  />
-                </div>
-                <div onClick={() => handleDropdownNavigation("/robotic-ball-collector")}>
-                  <DropdownLinkButton
-                    link="/robotic-ball-collector"
-                    name="Robotic Ball Collector"
-                  />
-                </div>
-                <div onClick={() => handleDropdownNavigation("https://bsquareddesigns.webflow.io/")}>
-                  <DropdownLinkButton
-                    link="https://bsquareddesigns.webflow.io/"
-                    name="B Squared Designs"
-                  />
-                </div>
-                <div onClick={() => handleDropdownNavigation("/3d-design")}>
-                  <DropdownLinkButton link="/3d-design" name="3D Design" />
-                </div>
-                <div onClick={() => handleDropdownNavigation("/repeat-receipts")}>
-                  <DropdownLinkButton
-                    link="/repeat-receipts"
-                    name="Repeat Receipts"
-                  />
-                </div>
-                <div onClick={() => handleDropdownNavigation("https://github.com/bbrown430/brianbrown.io")}>
-                  <DropdownLinkButton
-                    link="https://github.com/bbrown430/brianbrown.io"
-                    name="This Website"
-                  />
-                </div>
+                {headerProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    onClick={() => handleDropdownNavigation(project.path)}
+                  >
+                    <DropdownLinkButton
+                      link={project.path}
+                      name={project.title}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

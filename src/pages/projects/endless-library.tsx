@@ -3,7 +3,7 @@ import ProjectHeader from "@/components/project-page/project-header";
 
 const EndlessLibrary: React.FC = () => {
   return (
-    <div className="flex flex-col items-between justify-center  gap-12">
+    <div className="flex flex-col items-between justify-center gap-6 md:gap-12">
       <ProjectHeader
         title="Endless Library"
         subtitle="A tool to download more books than you'll ever read."
@@ -12,7 +12,7 @@ const EndlessLibrary: React.FC = () => {
         buttonColor="orange"
         buttonLink="https://github.com/bbrown430/endless-library"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8 md:gap-4">
         <ProjectBlock
           title="The Problem"
           paragraphText="Downloading e-books can be a confusing, time-consuming process, if you don’t know what you’re doing. Uploading the e-books to a Kindle is just another step getting in the way of reading."

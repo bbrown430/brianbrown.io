@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useLocation, Link } from "react-router-dom";
 
 interface DropdownLinkButtonProps {
   link: string;
@@ -6,23 +7,31 @@ interface DropdownLinkButtonProps {
 }
 
 const DropdownLinkButton: React.FC<DropdownLinkButtonProps> = ({ link, name }) => {
-  const navigate = useNavigate();
+  const location = useLocation();
+  const isExternal = link.startsWith("http");
+  const isActive = !isExternal && location.pathname === link;
 
-  const handleNavigate = () => {
-    if (/^https?:\/\//i.test(link)) {
-      window.open(link, "_blank");
-    } else {
-      navigate(link);
-    }
-  };
+  const baseClasses =
+    "hover:text-flexoki-green-400 transition-colors duration-300 ease-in-out";
+  const activeClass = isActive ? "text-flexoki-green-400" : "text-primary";
+
+  if (isExternal) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseClasses} ${activeClass}`}
+      >
+        {name}
+      </a>
+    );
+  }
 
   return (
-    <button
-      onClick={handleNavigate}
-      className="block transition-colors ease-in-out duration-150 hover:text-flexoki-green-400 whitespace-nowrap text-right cursor-pointer"
-    >
+    <Link to={link} className={`${baseClasses} ${activeClass}`}>
       {name}
-    </button>
+    </Link>
   );
 };
 

@@ -83,12 +83,12 @@ const ThreeDProjectBlock: React.FC<ThreeDProjectBlockProps> = ({
   };
 
   return (
-    <div className="flex flex-col px-4 gap-2">
+    <div className="flex flex-col md:px-4 gap-2">
       {/* Section Header */}
       <SectionHeader title={title} />
 
       {/* Problem and Solution Row */}
-      <div className="flex flex-col md:flex-row mt-2 gap-12">
+      <div className="flex flex-col md:flex-row mt-2 gap-2 md:gap-12">
         {/* The Problem */}
         <div className="flex-1 flex flex-col gap-2">
           <SectionSubheader title="The Problem" />
@@ -108,7 +108,7 @@ const ThreeDProjectBlock: React.FC<ThreeDProjectBlockProps> = ({
 
       {/* Render and Result Row */}
       {(renderImage || resultImage) && (
-        <div className="flex flex-col md:flex-row gap-12">
+      <div className="flex flex-col md:flex-row mt-2 gap-2 md:gap-12">
           {/* The Render */}
           {renderImage && (
             <div className="flex-1 flex flex-col gap-4">

@@ -11,7 +11,6 @@ interface ProjectBlockProps {
   title: string;
   paragraphText?: string;
   altText?: string;
-  videoHeight?: string;
   subheading?: boolean;
   timelineImage?: string;
   mediaWidth?: string;
@@ -24,7 +23,6 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
   title,
   paragraphText,
   altText,
-  videoHeight,
   subheading = false,
   timelineImage,
   mediaWidth = "3/5"
@@ -52,11 +50,11 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
 
   return (
     <div
-      className={`flex flex-col ${
+      className={`flex flex-col gap-0 ${
         paragraphText ? "md:flex-row" : "md:flex-col"
       } ${
-        paragraphText ? "gap-8" : "gap-2"
-      } px-4`}
+        paragraphText ? "md:gap-8" : "md:gap-2"
+      } sm:px-4`}
     >
       <div className={`${textWidth} flex flex-col gap-2 justify-center`}>
         <div className="flex flex-col gap-2 items-start">
@@ -90,7 +88,6 @@ const ProjectBlock: React.FC<ProjectBlockProps> = ({
             <VideoPlayer
               url={videoUrl}
               thumbnail={videoThumbnail || ""}
-              height={videoHeight || "240px"}
             />
           ) : (
             <img
