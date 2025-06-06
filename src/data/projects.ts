@@ -30,7 +30,7 @@ export interface Project {
       title: 'Search Time Crisis',
       path: 'https://www.searchtimecrisis.com/',
       skills: ['React', 'OpenAI Whisper', 'TypeScript', 'Python', 'Tailwind CSS'],
-      description: '**Over 10k page visits!** \n Search through 475+ hours of Time Crisis. [Featured on their Twitter!](https://x.com/timecrisis2000/status/1852534408227733859#m)',
+      description: '**Over 10k page visits!** \n Search through 475+ hours of Time Crisis. [Featured on their Twitter!](https://xcancel.com/timecrisis2000/status/1852534408227733859#m)',
       lottiePath: '/lotties/searchtimecrisis.json',
       date: 'Since Oct \'24',
       color: 'green',
